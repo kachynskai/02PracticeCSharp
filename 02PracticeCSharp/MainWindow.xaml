@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KMA.ProgrammingInCSharp.Practice2"
+        xmlns:local="clr-namespace:KMA.ProgrammingInCSharp.Practice2" xmlns:view="clr-namespace:KMA.ProgrammingInCSharp.Practice2.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" MinWidth="600" MinHeight="360">
     <Grid>
+        <view:PersonView></view:PersonView>
 
     </Grid>
 </Window>

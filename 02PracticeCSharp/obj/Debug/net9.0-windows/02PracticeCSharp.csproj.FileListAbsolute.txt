@@ -18,3 +18,7 @@ C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02Practice
 C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\02PracticeCSharp.pdb
 C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\02PracticeCSharp.genruntimeconfig.cache
 C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\ref\02PracticeCSharp.dll
+C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\View\PersonView.g.cs
+C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\View\PersonView.baml
+C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\02PracticeCSharp.sourcelink.json
+C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\GeneratedInternalTypeHelper.g.cs

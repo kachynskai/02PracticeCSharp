@@ -42,7 +42,7 @@ namespace KMA.ProgrammingInCSharp.Practice2.Model
         public bool IsAdult { get { return _isAdult; } private set { _isAdult = value; } }
         public string SunSign { get { return _sunSign; } private set { _sunSign = value; } }
         public string ChineseSign { get { return _chineseSign; } private set { _chineseSign = value; } }
-        public bool IsBirthday { get { return _isBirthday; } set { _isBirthday = value; } }
+        public bool IsBirthday { get { return _isBirthday; } private set { _isBirthday = value; } }
 
 
         #endregion
