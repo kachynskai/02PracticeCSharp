@@ -53,7 +53,7 @@ namespace KMA.ProgrammingInCSharp.Practice2.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/02PracticeCSharp;component/view/personview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/02PracticeCSharp;V1.0.0.0;component/view/personview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\PersonView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

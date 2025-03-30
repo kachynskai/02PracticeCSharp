@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\ProgrammingOnCSharp\\Practices\\ProgrammingOnCSharp\\02PracticeCSharp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|c:\\programmingoncsharp\\practices\\programmingoncsharp\\02practicecsharp\\02practicecsharp\\view\\personview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|solutionrelative:02practicecsharp\\view\\personview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|c:\\programmingoncsharp\\practices\\programmingoncsharp\\02practicecsharp\\02practicecsharp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|solutionrelative:02practicecsharp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|c:\\programmingoncsharp\\practices\\programmingoncsharp\\02practicecsharp\\02practicecsharp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|solutionrelative:02practicecsharp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|c:\\programmingoncsharp\\practices\\programmingoncsharp\\02practicecsharp\\02practicecsharp\\view\\personview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|solutionrelative:02practicecsharp\\view\\personview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|c:\\programmingoncsharp\\practices\\programmingoncsharp\\02practicecsharp\\02practicecsharp\\view\\personview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|c:\\programmingoncsharp\\practices\\programmingoncsharp\\02practicecsharp\\02practicecsharp\\model\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|solutionrelative:02practicecsharp\\model\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|c:\\programmingoncsharp\\practices\\programmingoncsharp\\02practicecsharp\\02practicecsharp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|solutionrelative:02practicecsharp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60DBDA0E-6216-4B47-9A8C-92FD545D62A4}|02PracticeCSharp\\02PracticeCSharp.csproj|c:\\programmingoncsharp\\practices\\programmingoncsharp\\02practicecsharp\\02practicecsharp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PersonView.xaml.cs",
               "DocumentMoniker": "C:\\ProgrammingOnCSharp\\Practices\\ProgrammingOnCSharp\\02PracticeCSharp\\02PracticeCSharp\\View\\PersonView.xaml.cs",
               "RelativeDocumentMoniker": "02PracticeCSharp\\View\\PersonView.xaml.cs",
@@ -59,19 +59,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "PersonView.xaml",
               "DocumentMoniker": "C:\\ProgrammingOnCSharp\\Practices\\ProgrammingOnCSharp\\02PracticeCSharp\\02PracticeCSharp\\View\\PersonView.xaml",
               "RelativeDocumentMoniker": "02PracticeCSharp\\View\\PersonView.xaml",
-              "ToolTip": "C:\\ProgrammingOnCSharp\\Practices\\ProgrammingOnCSharp\\02PracticeCSharp\\02PracticeCSharp\\View\\PersonView.xaml*",
-              "RelativeToolTip": "02PracticeCSharp\\View\\PersonView.xaml*",
+              "ToolTip": "C:\\ProgrammingOnCSharp\\Practices\\ProgrammingOnCSharp\\02PracticeCSharp\\02PracticeCSharp\\View\\PersonView.xaml",
+              "RelativeToolTip": "02PracticeCSharp\\View\\PersonView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-03-30T17:00:50.977Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Person.cs",
               "DocumentMoniker": "C:\\ProgrammingOnCSharp\\Practices\\ProgrammingOnCSharp\\02PracticeCSharp\\02PracticeCSharp\\Model\\Person.cs",
               "RelativeDocumentMoniker": "02PracticeCSharp\\Model\\Person.cs",
@@ -120,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\ProgrammingOnCSharp\\Practices\\ProgrammingOnCSharp\\02PracticeCSharp\\02PracticeCSharp\\MainWindow.xaml",
               "RelativeDocumentMoniker": "02PracticeCSharp\\MainWindow.xaml",
@@ -132,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\ProgrammingOnCSharp\\Practices\\ProgrammingOnCSharp\\02PracticeCSharp\\02PracticeCSharp\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "02PracticeCSharp\\MainWindow.xaml.cs",
@@ -140,7 +140,8 @@
               "RelativeToolTip": "02PracticeCSharp\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T01:40:20.274Z"
+              "WhenOpened": "2025-03-30T01:40:20.274Z",
+              "EditorCaption": ""
             }
           ]
         }

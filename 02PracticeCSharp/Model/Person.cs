@@ -27,6 +27,7 @@ namespace KMA.ProgrammingInCSharp.Practice2.Model
             LastName = lastName;    
             Email = email;  
             Birthday = birthday;
+            CalculateProperties();
         }
 
         public Person(string firstName, string lastName, string email) : this(firstName, lastName, email, DateTime.Today){}
@@ -38,14 +39,22 @@ namespace KMA.ProgrammingInCSharp.Practice2.Model
         public string FirstName { get { return _firstName; } set { _firstName = value; } }
         public string LastName { get { return _lastName; } set { _lastName = value; } }
         public string Email { get { return _email; } set { _email = value; } } 
-        public DateTime Birthday { get { return _birthday; } set { _birthday = value; } }
-        public bool IsAdult { get { return _isAdult; } private set { _isAdult = value; } }
-        public string SunSign { get { return _sunSign; } private set { _sunSign = value; } }
-        public string ChineseSign { get { return _chineseSign; } private set { _chineseSign = value; } }
-        public bool IsBirthday { get { return _isBirthday; } private set { _isBirthday = value; } }
+        public DateTime Birthday { get { return _birthday; } set { _birthday = value; CalculateProperties(); } }
+        public bool IsAdult => _isAdult;
+        public string SunSign => _sunSign;
+        public string ChineseSign => _chineseSign;
+        public bool IsBirthday => _isBirthday;
 
 
         #endregion
+
+        private void CalculateProperties()
+        {
+            _isAdult = GetIsAdult();
+            _sunSign = CalculateWesternSign(); 
+            _chineseSign = CalculateChineseSign();
+            _isBirthday = IsBirthdayToday();
+        }
 
         private string CalculateWesternSign()
         {

@@ -17,22 +17,22 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" VerticalAlignment="Center" Margin="15, 0">
             <TextBlock  FontSize="20"  Foreground ="DarkBlue" FontFamily="Bahnschrift"  > Please enter your name:</TextBlock>
-            <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue"/>
+            <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue" Text="{Binding FirstName, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="15, 0">
             <TextBlock  FontSize="20"  Foreground ="DarkBlue" FontFamily="Bahnschrift"  > Please enter your surname:</TextBlock>
-            <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue"/>
+            <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue"  Text="{Binding LastName, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="15, 0">
             <TextBlock  FontSize="20"  Foreground ="DarkBlue" FontFamily="Bahnschrift"  > Please enter your email:</TextBlock>
-            <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue"/>
+                <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue"  Text="{Binding Email, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         <StackPanel Grid.Row="3" VerticalAlignment="Center" Margin="15, 0">
             <TextBlock  FontSize="20"  Foreground ="DarkBlue" FontFamily="Bahnschrift"  > Please enter your date of birth:</TextBlock>
             <DatePicker FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue" SelectedDate="{Binding BirthDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
         </StackPanel>
 
-        <Button Grid.Row="4"  FontSize="20" Foreground ="DarkBlue" Background="White" BorderBrush="DarkBlue" FontFamily="Bahnschrift" Height="45" Width ="450"  VerticalAlignment="Center" HorizontalAlignment="Center" Content="Proceed" Command="{Binding CalculateSignsCommand}">
+        <Button Grid.Row="4"  FontSize="20" Foreground ="DarkBlue" Background="White" BorderBrush="DarkBlue" FontFamily="Bahnschrift" Height="45" Width ="450"  VerticalAlignment="Center" HorizontalAlignment="Center" Content="Proceed" Command="{Binding ProceedCommand}" IsEnabled="{Binding IsProceedEnabled}">
         </Button>
         <Grid Grid.Row="5" Margin="0, 0, 0, 0" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
@@ -47,27 +47,27 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Name: "></TextBlock>
-                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift"  HorizontalAlignment="Center" Text="{Binding WesternSign}"></TextBlock>
+                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift"  HorizontalAlignment="Center" Text="{Binding Name}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="0" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Surname: "></TextBlock>
-                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding ChineseSign}"></TextBlock>
+                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding Surname}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="1" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Email: "></TextBlock>
-                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding WesternSign}"></TextBlock>
+                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding EmailDisplay}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="1" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Date of birth: "></TextBlock>
-                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding ChineseSign}"></TextBlock>
+                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding BirthDateDisplay}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="2" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Are you adult? : "></TextBlock>
-                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding WesternSign}"></TextBlock>
+                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding IsAdultDisplay}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="2" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Is it your birthday? : "></TextBlock>
-                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding ChineseSign}"></TextBlock>
+                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding IsBirthdayDisplay}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="3" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Western system: "></TextBlock>
