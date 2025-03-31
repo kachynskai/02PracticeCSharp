@@ -1,38 +1,34 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using KMA.ProgrammingInCSharp.Practice2.Model;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
 namespace KMA.ProgrammingInCSharp.Practice2.ViewModel
 {
     class PersonViewModel : INotifyPropertyChanged
-
     {
         private Person? _person;
-
         private RelayCommand? _proceedCommand;
 
         private string _firstName;
         private string _lastName;
         private string _email;
-        private DateTime _birthday;
+        private DateTime? _birthday;
         private bool _taskIsRunning;
+      
 
         public event PropertyChangedEventHandler? PropertyChanged;
-
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            _proceedCommand?.NotifyCanExecuteChanged();
         }
 
         public string FirstName
         {
-            get{ return _person.FirstName;}
+            get => _firstName;
             set
             {
                 _firstName = value;
@@ -43,7 +39,7 @@ namespace KMA.ProgrammingInCSharp.Practice2.ViewModel
 
         public string LastName
         {
-            get => _person.LastName;
+            get => _lastName;
             set
             {
                 _lastName = value;
@@ -52,9 +48,9 @@ namespace KMA.ProgrammingInCSharp.Practice2.ViewModel
             }
         }
 
-        public DateTime BirthDate
+        public DateTime? BirthDate
         {
-            get => _person.Birthday;
+            get => _birthday;
             set
             {
                 _birthday = value;
@@ -65,7 +61,7 @@ namespace KMA.ProgrammingInCSharp.Practice2.ViewModel
 
         public string Email
         {
-            get => _person.Email;
+            get => _email;
             set
             {
                 _email = value;
@@ -74,67 +70,84 @@ namespace KMA.ProgrammingInCSharp.Practice2.ViewModel
             }
         }
 
-        public string IsAdultDisplay => _person.IsAdult == true ? "Yes" : "No";
-        public string IsBirthdayDisplay => _person.IsBirthday == true ? "Yes" : "No";
-        public string WesternSign => _person.SunSign;
-        public string ChineseSign => _person.ChineseSign;
+  
+        public string DisplayFirstName => _person?.FirstName ?? string.Empty;
+        public string DisplayLastName => _person?.LastName ?? string.Empty;
+        public string DisplayEmail => _person?.Email ?? string.Empty;
+        public string DisplayBirthDate => _person?.Birthday.ToString("d") ?? string.Empty;
+        public string IsAdultDisplay => _person != null ? (_person.IsAdult ? "Yes" : "No") : string.Empty;
+        public string IsBirthdayDisplay => _person != null ? (_person.IsBirthday ? "Yes" : "No") : string.Empty;
+        public string WesternSign => _person?.SunSign ?? string.Empty;
+        public string ChineseSign => _person?.ChineseSign ??  string.Empty;
+
         public bool IsProceedEnabled => CanProceedTask();
+
+        //public IAsyncRelayCommand ProceedCommand =>
+        //    _proceedCommand ??= new AsyncRelayCommand(ProceedTask, CanProceedTask);
         public RelayCommand ProceedCommand => _proceedCommand ??= new RelayCommand(async () => await ProceedTask(), () => CanProceedTask());
 
         private async Task ProceedTask()
         {
             _taskIsRunning = true;
+            OnPropertyChanged(nameof(IsProceedEnabled));
+
             try
             {
-                _person = await Task.Run(() => new Person(_firstName, _lastName, _email, _birthday));
+                
+                _person = await Task.Run(() => new Person(_firstName, _lastName, _email, _birthday.Value));
+
+                DateTime today = DateTime.Now;
+                int age = today.Year - _person.Birthday.Year;
+                if (_person.Birthday.Date > today.AddYears(-age)) age--;
+
+                if (age > 135 || _person.Birthday > today)
+                {
+                    _person = null;
+                    MessageBox.Show("You entered an invalid Date!", "Exception!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    _birthday = null;
+                    OnPropertyChanged(nameof(BirthDate));
+                    return;
+                }
+                if (!_person.Email.Contains('@'))
+                {
+                    _person = null;
+                    MessageBox.Show("You entered an invalid Email!", "Exception!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    _email = string.Empty;
+                    OnPropertyChanged(nameof(Email));
+                    return;
+                }
+                if (_person.IsBirthday)
+                {
+                    MessageBox.Show("Congrats with ur birthdayyy! It seems like we have a party today!", "Woow, it's a ur day!", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+
+                OnPropertyChanged(nameof(DisplayFirstName));
+                OnPropertyChanged(nameof(DisplayLastName));
+                OnPropertyChanged(nameof(DisplayEmail));
+                OnPropertyChanged(nameof(DisplayBirthDate));
+                OnPropertyChanged(nameof(IsAdultDisplay));
+                OnPropertyChanged(nameof(IsBirthdayDisplay));
+                OnPropertyChanged(nameof(WesternSign));
+                OnPropertyChanged(nameof(ChineseSign));
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Exeption!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Exception!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            finally 
+            finally
             {
-                DateTime today = DateTime.Now;
-                int age = today.Year - BirthDate.Year;
-                if (BirthDate.Date > today.AddYears(-age))
-                {
-                    age--;
-                }
-
-                if (age > 135 || BirthDate > today)
-                {
-                    _person = null;
-                    MessageBox.Show("You entered invalid Date!", "Exeption!", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                else
-                {
-                    if (_person.IsBirthday)
-                    {
-                        MessageBox.Show("Congrats with ur birthdayyy! It seems like we have a party today!", "Woow, it's a ur day!", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                    }
-                    OnPropertyChanged(nameof(FirstName));
-                    OnPropertyChanged(nameof(LastName));
-                    OnPropertyChanged(nameof(BirthDate));
-                    OnPropertyChanged(nameof(Email));
-                    OnPropertyChanged(nameof(IsAdultDisplay));
-                    OnPropertyChanged(nameof(IsBirthdayDisplay));
-                    OnPropertyChanged(nameof(WesternSign));
-                    OnPropertyChanged(nameof(ChineseSign));
-
-                }
                 _taskIsRunning = false;
+                OnPropertyChanged(nameof(IsProceedEnabled));
             }
-
-
         }
 
-        private bool CanProceedTask() 
+        private bool CanProceedTask()
         {
-            return !_taskIsRunning && !string.IsNullOrEmpty(_firstName) && !string.IsNullOrEmpty(_lastName) && !string.IsNullOrEmpty(_email) && _birthday != default;
+            return !_taskIsRunning &&
+                   !string.IsNullOrWhiteSpace(_firstName) &&
+                   !string.IsNullOrWhiteSpace(_lastName) &&
+                   !string.IsNullOrWhiteSpace(_email) &&
+                   _birthday.HasValue;
         }
-
-
     }
-     
-    }
-
+}

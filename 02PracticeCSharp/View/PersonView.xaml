@@ -17,15 +17,15 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" VerticalAlignment="Center" Margin="15, 0">
             <TextBlock  FontSize="20"  Foreground ="DarkBlue" FontFamily="Bahnschrift"  > Please enter your name:</TextBlock>
-            <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue" Text="{Binding FirstName, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue" Text="{Binding FirstName,  UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="15, 0">
             <TextBlock  FontSize="20"  Foreground ="DarkBlue" FontFamily="Bahnschrift"  > Please enter your surname:</TextBlock>
-            <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue"  Text="{Binding LastName, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue"  Text="{Binding LastName,  UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="15, 0">
             <TextBlock  FontSize="20"  Foreground ="DarkBlue" FontFamily="Bahnschrift"  > Please enter your email:</TextBlock>
-                <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue"  Text="{Binding Email, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox FontSize="17" Foreground ="DarkBlue" FontFamily="Bahnschrift" FontWeight="Light" BorderBrush="AliceBlue"  Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         <StackPanel Grid.Row="3" VerticalAlignment="Center" Margin="15, 0">
             <TextBlock  FontSize="20"  Foreground ="DarkBlue" FontFamily="Bahnschrift"  > Please enter your date of birth:</TextBlock>
@@ -47,19 +47,19 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Name: "></TextBlock>
-                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift"  HorizontalAlignment="Center" Text="{Binding FirstName}"></TextBlock>
+                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift"  HorizontalAlignment="Center" Text="{Binding DisplayFirstName}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="0" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Surname: "></TextBlock>
-                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding LastName}"></TextBlock>
+                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding DisplayLastName}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="1" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Email: "></TextBlock>
-                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding Email}"></TextBlock>
+                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding DisplayEmail}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="1" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Date of birth: "></TextBlock>
-                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding BirthDate}"></TextBlock>
+                <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" HorizontalAlignment="Center" Text="{Binding DisplayBirthDate}"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="2" Margin="15, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Orientation="Horizontal">
                 <TextBlock FontSize="20" Foreground ="DarkBlue" FontFamily="Bahnschrift" Text="Are you adult? : "></TextBlock>

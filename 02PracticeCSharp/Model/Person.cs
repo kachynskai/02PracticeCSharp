@@ -28,6 +28,7 @@ namespace KMA.ProgrammingInCSharp.Practice2.Model
             Email = email;  
             Birthday = birthday;
             CalculateProperties();
+            Thread.Sleep(1000);
         }
 
         public Person(string firstName, string lastName, string email) : this(firstName, lastName, email, DateTime.Today){}
@@ -58,9 +59,6 @@ namespace KMA.ProgrammingInCSharp.Practice2.Model
 
         private string CalculateWesternSign()
         {
-            //if (BirthDay == null)
-            //    return string.Empty;
-
             string[] zodiacSigns = {
             "Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini",
             "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"
@@ -76,8 +74,6 @@ namespace KMA.ProgrammingInCSharp.Practice2.Model
         }
         private string CalculateChineseSign()
         {
-            //if (Birthday == null)
-            //    return string.Empty;
             int year = Birthday.Year;
             string[] chineseZodiacSigns = { "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig" };
             return chineseZodiacSigns[(year - 4) % 12];
