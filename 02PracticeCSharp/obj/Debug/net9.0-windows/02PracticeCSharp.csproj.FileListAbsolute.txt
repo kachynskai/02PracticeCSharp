@@ -22,3 +22,6 @@ C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02Practice
 C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\View\PersonView.baml
 C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\02PracticeCSharp.sourcelink.json
 C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\bin\Debug\net9.0-windows\CommunityToolkit.Mvvm.dll
+C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\02PracticeCSharp.csproj.AssemblyReference.cache
+C:\ProgrammingOnCSharp\Practices\ProgrammingOnCSharp\02PracticeCSharp\02PracticeCSharp\obj\Debug\net9.0-windows\02Practi.80E5CB56.Up2Date

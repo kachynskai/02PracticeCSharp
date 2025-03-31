@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KMA.ProgrammingInCSharp.Practice2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace KMA.ProgrammingInCSharp.Practice2.View
     /// </summary>
     public partial class PersonView : UserControl
     {
+        private PersonViewModel _model;
         public PersonView()
         {
             InitializeComponent();
+            DataContext = _model = new PersonViewModel();
         }
     }
 }
