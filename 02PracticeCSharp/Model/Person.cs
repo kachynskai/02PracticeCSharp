@@ -1,7 +1,9 @@
-﻿using System;
+﻿using KMA.ProgrammingInCSharp.Practice2.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace KMA.ProgrammingInCSharp.Practice2.Model
@@ -39,8 +41,40 @@ namespace KMA.ProgrammingInCSharp.Practice2.Model
         #region Properties
         public string FirstName { get { return _firstName; } set { _firstName = value; } }
         public string LastName { get { return _lastName; } set { _lastName = value; } }
-        public string Email { get { return _email; } set { _email = value; } } 
-        public DateTime Birthday { get { return _birthday; } set { _birthday = value; CalculateProperties(); } }
+        public string Email 
+        { 
+            get { return _email; } 
+            set 
+            {
+                Regex validateEmailRegex = new Regex(@"^[A-Za-z0-9]+@(?:[A-Za-z]+\.)+[A-Za-z]+$");
+
+                if (!validateEmailRegex.IsMatch(value))
+                {
+                    throw new InvalidEmailException();
+                }
+                _email = value; 
+            } 
+        } 
+        public DateTime Birthday 
+        { 
+            get { return _birthday; }
+            set 
+            {
+                DateTime today = DateTime.Now;
+
+                if (value > today)
+                    throw new UnbornPersonException();
+
+                int age = today.Year - value.Year;
+                if (value.Date > today.AddYears(-age)) age--;
+
+                if(age > 135)
+                    throw new TooOldPersonException();
+
+                _birthday = value; 
+                CalculateProperties(); 
+            } 
+        }
         public bool IsAdult => _isAdult;
         public string SunSign => _sunSign;
         public string ChineseSign => _chineseSign;

@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using KMA.ProgrammingInCSharp.Practice2.Exceptions;
 using KMA.ProgrammingInCSharp.Practice2.Model;
 using System;
 using System.ComponentModel;
@@ -82,8 +83,6 @@ namespace KMA.ProgrammingInCSharp.Practice2.ViewModel
 
         public bool IsProceedEnabled => CanProceedTask();
 
-        //public IAsyncRelayCommand ProceedCommand =>
-        //    _proceedCommand ??= new AsyncRelayCommand(ProceedTask, CanProceedTask);
         public RelayCommand ProceedCommand => _proceedCommand ??= new RelayCommand(async () => await ProceedTask(), () => CanProceedTask());
 
         private async Task ProceedTask()
@@ -96,26 +95,6 @@ namespace KMA.ProgrammingInCSharp.Practice2.ViewModel
                 
                 _person = await Task.Run(() => new Person(_firstName, _lastName, _email, _birthday.Value));
 
-                DateTime today = DateTime.Now;
-                int age = today.Year - _person.Birthday.Year;
-                if (_person.Birthday.Date > today.AddYears(-age)) age--;
-
-                if (age > 135 || _person.Birthday > today)
-                {
-                    _person = null;
-                    MessageBox.Show("You entered an invalid Date!", "Exception!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    _birthday = null;
-                    OnPropertyChanged(nameof(BirthDate));
-                    return;
-                }
-                if (!_person.Email.Contains('@'))
-                {
-                    _person = null;
-                    MessageBox.Show("You entered an invalid Email!", "Exception!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    _email = string.Empty;
-                    OnPropertyChanged(nameof(Email));
-                    return;
-                }
                 if (_person.IsBirthday)
                 {
                     MessageBox.Show("Congrats with ur birthdayyy! It seems like we have a party today!", "Woow, it's a ur day!", MessageBoxButton.OK, MessageBoxImage.Asterisk);
@@ -129,6 +108,24 @@ namespace KMA.ProgrammingInCSharp.Practice2.ViewModel
                 OnPropertyChanged(nameof(IsBirthdayDisplay));
                 OnPropertyChanged(nameof(WesternSign));
                 OnPropertyChanged(nameof(ChineseSign));
+            }
+            catch (UnbornPersonException ex)
+            {
+                _birthday = null;
+                OnPropertyChanged(nameof(BirthDate));
+                MessageBox.Show(ex.Message, "Exeption!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (TooOldPersonException ex)
+            {
+                _birthday = null;
+                OnPropertyChanged(nameof(BirthDate));
+                MessageBox.Show(ex.Message, "Exeption!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (InvalidEmailException ex)
+            {
+                _email = string.Empty;
+                OnPropertyChanged(nameof(Email));
+                MessageBox.Show(ex.Message, "Exeption!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             catch (Exception ex)
             {
